@@ -1,6 +1,6 @@
 {
   "name": "assign-properties",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "An Object.assign like utility that preserve descriptors",
   "main": "cjs/index.js",
   "scripts": {
@@ -14,7 +14,12 @@
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "test": "nyc node test/index.js"
   },
-  "keywords": ["Object", "assign", "descriptors", "properties"],
+  "keywords": [
+    "Object",
+    "assign",
+    "descriptors",
+    "properties"
+  ],
   "author": "Andrea Giammarchi",
   "license": "ISC",
   "devDependencies": {
