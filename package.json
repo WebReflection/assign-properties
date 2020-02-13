@@ -1,0 +1,40 @@
+{
+  "name": "assign-properties",
+  "version": "0.0.0",
+  "description": "An Object.assign like utility that preserve descriptors",
+  "main": "cjs/index.js",
+  "scripts": {
+    "build": "npm run cjs && npm run rollup:new && npm run rollup:babel && npm run min && npm run fix:default && npm run test && npm run size",
+    "cjs": "ascjs --no-default esm cjs",
+    "rollup:new": "rollup --config rollup/new.config.js",
+    "rollup:babel": "rollup --config rollup/babel.config.js",
+    "min": "uglifyjs index.js --support-ie8 --comments=/^!/ -c -m -o min.js",
+    "fix:default": "sed -i 's/({})/({}).default/' index.js && sed -i 's/({})/({}).default/' new.js && sed -i 's/({})/({}).default/' min.js",
+    "size": "cat min.js | gzip -9 | wc -c && cat min.js | brotli | wc -c && cat new.js | gzip -9 | wc -c && cat new.js | brotli | wc -c",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "test": "nyc node test/index.js"
+  },
+  "keywords": ["Object", "assign", "descriptors", "properties"],
+  "author": "Andrea Giammarchi",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@ungap/degap": "^0.1.6",
+    "ascjs": "^3.1.2",
+    "coveralls": "^3.0.9",
+    "nyc": "^15.0.0",
+    "rollup": "^1.31.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-includepaths": "^0.2.3",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.2.0",
+    "uglify-js": "^3.7.7"
+  },
+  "module": "esm/index.js",
+  "unpkg": "min.js",
+  "dependencies": {
+    "@ungap/assign": "^0.1.0",
+    "@ungap/get-own-property-descriptors": "^1.0.0"
+  }
+}

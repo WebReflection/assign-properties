@@ -1,0 +1,1 @@
+var assignProperties=function(t){"use strict";var e=Object.assign,r=Object.getOwnPropertyDescriptors;const{defineProperties:n}=Object;return t.default=function(t){const s={};for(let t=1,{length:n}=arguments;t<n;t++)e(s,r(arguments[t]));return n(t,s)},t}({}).default;
