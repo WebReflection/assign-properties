@@ -1,5 +1,7 @@
 # assignProperties
 
+[![Build Status](https://travis-ci.com/WebReflection/assign-properties.svg?branch=master)](https://travis-ci.com/WebReflection/assign-properties) [![Coverage Status](https://coveralls.io/repos/github/WebReflection/assign-properties/badge.svg?branch=master)](https://coveralls.io/github/WebReflection/assign-properties?branch=master) ![WebReflection status](https://offline.report/status/webreflection.svg)
+
 An [Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) like utility that preserve descriptors, as in accessors or value, or configurable, or writable, etc.
 
 ```js
@@ -8,7 +10,7 @@ const assignProperties = require('assign-properties');
 // <script src="https://unpkg.com/assign-properties">
 ```
 
-## Same `Object.assign` API
+## Same [Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) API
 
 ```js
 // the issue with assign is that copies are values
