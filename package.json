@@ -1,6 +1,6 @@
 {
   "name": "assign-properties",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An Object.assign like utility that preserve descriptors",
   "main": "cjs/index.js",
   "scripts": {
