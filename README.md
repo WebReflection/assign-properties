@@ -25,3 +25,12 @@ const after = assignProperties({}, {get random() { return Math.random() }});
 // the getter is passed along instead of being lost in the process
 after.random === after.random; // false
 ```
+
+### Object spread suffers the same issue
+```js
+const base = {get random() { return Math.random() }};
+const spread = {...base};
+spread.random === spread.random; // true
+```
+
+So, if you want to bring accessors to the mix, this module is your stop.
