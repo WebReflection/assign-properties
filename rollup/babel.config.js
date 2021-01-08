@@ -8,6 +8,7 @@ export default {
     babel({presets: ['@babel/preset-env']})
   ],
   output: {
+    esModule: false,
     exports: 'named',
     file: './index.js',
     format: 'iife',
